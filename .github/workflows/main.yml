@@ -15,7 +15,7 @@ jobs:
         python-version: '3.9'
     - run: pip install notebook requests bs4
     - name: Run scraper
-      run: jupyter execute x.ipynb
+      run: jupyter execute scrape.ipynb
 
     - name: Add and commit
       id: add_commit
@@ -61,7 +61,7 @@ jobs:
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
       with:
-        text: molly new file alert!!!
+        text: IRIS new file alert!!!
         attachments: |
           [
               {
